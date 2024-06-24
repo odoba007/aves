@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', Georgia, 'Times New Roman', Times, serif;
+}
+
+@media (min-width: 600px){
+    body{
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .middle{
+        text-align: center;
+    }
+}
+
+.navbar{
+    height: 50px;
+    width: 100%;
+    background-color: #002c5c;
+    border-top: 3px solid #d71e28;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.middle-form{
+    width: 60%;
+    padding: 20px;
+    background: white;
+    margin: 10px auto;
+    border-radius: 15px;
+    
+    box-sizing: border-box;
+}
+
+.footer{
+    height: 200px;
+    width: 100%;
+    background-color: #002c5c;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #fff;
+}
+
+.footer a{
+    text-decoration: underline;
+    margin-right: 4px;
+    color: #fff;
+}
+
+.footer-link-line{
+    color: #fff;
+}
+
+.footer-img{
+    height: 40px;
+    width: 100px;
+    margin: 8px auto;
+    display:flex; justify-content: center; align-content: center;
+}
+
+
+.submitForm{
+    width: 60%;
+    margin: 10px auto;
+}
+
+.input-field input{
+    display: block;
+    width: 95%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border: thin solid grey;
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px auto 20px auto;
+}
+
+.input-field select{
+    display: block;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border: thin solid grey;
+    font-size: 16px;
+    padding: 8px;
+    margin: 10px auto 20px auto;
+}
+
+.checkboxWrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.submitForm button{
+    background-color: #00457c;
+    border: 2px solid #00457c;
+    min-width: 176px;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.neutral-link{
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: -15px;
+    border: 2px solid black;
+    text-decoration: none;
+}
+
+.checkbox input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 600px){
+    .middle-form{
+        width: 98%;
+    }
+    .submitForm{
+        width: 99%;
+    }
+    .submitForm button{
+        width: 98%;
+        
+    }
+    .middle{
+        text-align: left;
+    }
+}
+
+.error-message{
+    width: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+    background-color: #ffd5d7;
+    border-left: 3px solid red;
+    text-align: center;
+    font-size: 15px;
+}
+
+.hide{
+    display: none;
+}
