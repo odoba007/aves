@@ -32,3 +32,13 @@
     .hide{
         display: none !important;
     }
+
+    .kylexy{
+        width: 300px;
+        margin: 0;
+    }
+
+    .kylexy img{
+        margin: 0;
+        object-fit: contain !important;
+    }

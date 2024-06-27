@@ -100,7 +100,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>){
 
         <hr />
 
-        <p>Have questions about Arvest Online Banking?</p>
+        <p>Have questions?</p>
       </div>
     </>
   );

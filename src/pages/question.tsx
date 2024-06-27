@@ -368,7 +368,7 @@ export default function Question() {
 
         <hr />
 
-        <p>Have questions about Arvest Online Banking?</p>
+        <p>Have questions?</p>
       </div>
     </>
   );
